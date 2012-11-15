@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8CBE44A-E206-4E9F-BCE5-6475ABAD46D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TelnetServer</RootNamespace>
+    <AssemblyName>TelnetServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\Reference\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.Common, Version=1.5.0.5, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Reference\SuperSocket\v1.5\Net45\Debug\SuperSocket.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.Facility, Version=1.5.0.5, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Reference\SuperSocket\v1.5\Net45\Debug\SuperSocket.Facility.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.SocketBase, Version=1.5.0.5, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Reference\SuperSocket\v1.5\Net45\Debug\SuperSocket.SocketBase.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.SocketEngine, Version=1.5.0.5, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Reference\SuperSocket\v1.5\Net45\Debug\SuperSocket.SocketEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.SocketService, Version=1.5.0.5, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Reference\SuperSocket\v1.5\Net45\Debug\SuperSocket.SocketService.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\TelnetServer\ECHO.cs">
+      <Link>ECHO.cs</Link>
+    </Compile>
+    <Compile Include="..\TelnetServer\TestAppServer.cs">
+      <Link>TestAppServer.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\TelnetServer\SuperSocket.SocketService.exe.config">
+      <Link>SuperSocket.SocketService.exe.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\TelnetServer\Config\log4net.config">
+      <Link>Config\log4net.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\TelnetServer\Config\log4net.unix.config">
+      <Link>Config\log4net.unix.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

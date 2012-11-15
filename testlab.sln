@@ -3,6 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{40502204-84BF-40B5-9EA0-D1FE2FBBCF68}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PerformanceTest", "PerformanceTest", "{2AE34925-7060-44F7-B103-B725F91A7FD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelnetServer.Net40", "PerformanceTest\TelnetServer\TelnetServer.Net40.csproj", "{E093AD56-5BF7-4147-BEF7-D231589D2E9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelnetServer.Net45", "PerformanceTest\TelnetServer.Net45\TelnetServer.Net45.csproj", "{C8CBE44A-E206-4E9F-BCE5-6475ABAD46D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelnetClient", "PerformanceTest\TelnetClient\TelnetClient.csproj", "{A802CE8A-9CD3-4353-AB1C-BDACFEBE2E95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelnetServer.v14", "PerformanceTest\TelnetServer.v14\TelnetServer.v14.csproj", "{D52E9DBE-D664-419C-BDFA-00DCAC9CB94D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,8 +23,30 @@ Global
 		{40502204-84BF-40B5-9EA0-D1FE2FBBCF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40502204-84BF-40B5-9EA0-D1FE2FBBCF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40502204-84BF-40B5-9EA0-D1FE2FBBCF68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E093AD56-5BF7-4147-BEF7-D231589D2E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E093AD56-5BF7-4147-BEF7-D231589D2E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E093AD56-5BF7-4147-BEF7-D231589D2E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E093AD56-5BF7-4147-BEF7-D231589D2E9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CBE44A-E206-4E9F-BCE5-6475ABAD46D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CBE44A-E206-4E9F-BCE5-6475ABAD46D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CBE44A-E206-4E9F-BCE5-6475ABAD46D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CBE44A-E206-4E9F-BCE5-6475ABAD46D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A802CE8A-9CD3-4353-AB1C-BDACFEBE2E95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A802CE8A-9CD3-4353-AB1C-BDACFEBE2E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A802CE8A-9CD3-4353-AB1C-BDACFEBE2E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A802CE8A-9CD3-4353-AB1C-BDACFEBE2E95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52E9DBE-D664-419C-BDFA-00DCAC9CB94D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52E9DBE-D664-419C-BDFA-00DCAC9CB94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52E9DBE-D664-419C-BDFA-00DCAC9CB94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52E9DBE-D664-419C-BDFA-00DCAC9CB94D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A802CE8A-9CD3-4353-AB1C-BDACFEBE2E95} = {2AE34925-7060-44F7-B103-B725F91A7FD0}
+		{E093AD56-5BF7-4147-BEF7-D231589D2E9E} = {2AE34925-7060-44F7-B103-B725F91A7FD0}
+		{C8CBE44A-E206-4E9F-BCE5-6475ABAD46D8} = {2AE34925-7060-44F7-B103-B725F91A7FD0}
+		{D52E9DBE-D664-419C-BDFA-00DCAC9CB94D} = {2AE34925-7060-44F7-B103-B725F91A7FD0}
 	EndGlobalSection
 EndGlobal
