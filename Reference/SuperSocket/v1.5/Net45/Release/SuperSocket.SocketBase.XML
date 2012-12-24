@@ -3027,6 +3027,11 @@
             Default MaxConnectionNumber
             </summary>
         </member>
+        <member name="F:SuperSocket.SocketBase.Config.ServerConfig.DefaultSendingQueueSize">
+            <summary>
+            Default sending queue size
+            </summary>
+        </member>
         <member name="F:SuperSocket.SocketBase.Config.ServerConfig.DefaultMaxRequestLength">
             <summary>
             Default MaxRequestLength
@@ -3422,6 +3427,19 @@
             <param name="session">The session.</param>
             <param name="requestInfo">The request info.</param>
         </member>
+        <member name="T:SuperSocket.SocketBase.ISocketServerAccessor">
+            <summary>
+            SocketServer Accessor interface
+            </summary>
+        </member>
+        <member name="P:SuperSocket.SocketBase.ISocketServerAccessor.SocketServer">
+            <summary>
+            Gets the socket server.
+            </summary>
+            <value>
+            The socket server.
+            </value>
+        </member>
         <member name="T:SuperSocket.SocketBase.IAppSession">
             <summary>
             The basic interface for appSession
@@ -3467,15 +3485,6 @@
             <summary>
             Starts the session.
             </summary>
-        </member>
-        <member name="M:SuperSocket.SocketBase.IAppSession.TryGetSendingData(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})">
-            <summary>
-            Tries to get the data segment to be sent.
-            </summary>
-            <param name="segments">The segments.</param>
-            <returns>
-            return whether has data to send
-            </returns>
         </member>
         <member name="P:SuperSocket.SocketBase.IAppSession.AppServer">
             <summary>
@@ -3677,6 +3686,11 @@
             Protocol error 
             </summary>
         </member>
+        <member name="F:SuperSocket.SocketBase.CloseReason.InternalError">
+            <summary>
+            SuperSocket internal error
+            </summary>
+        </member>
         <member name="F:SuperSocket.SocketBase.CloseReason.Unknown">
             <summary>
             The socket is closed for unknown reason
@@ -3704,10 +3718,17 @@
             </summary>
             <param name="reason">The reason.</param>
         </member>
-        <member name="M:SuperSocket.SocketBase.ISocketSession.StartSend">
+        <member name="M:SuperSocket.SocketBase.ISocketSession.TrySend(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})">
             <summary>
-            Starts the sending.
+            Tries to send array segment.
             </summary>
+            <param name="segments">The segments.</param>
+        </member>
+        <member name="M:SuperSocket.SocketBase.ISocketSession.TrySend(System.ArraySegment{System.Byte})">
+            <summary>
+            Tries to send array segment.
+            </summary>
+            <param name="segment">The segment.</param>
         </member>
         <member name="M:SuperSocket.SocketBase.ISocketSession.ApplySecureProtocol">
             <summary>
@@ -4372,6 +4393,14 @@
             Gets the name of the server instance.
             </summary>
         </member>
+        <member name="P:SuperSocket.SocketBase.AppServerBase`2.SuperSocket#SocketBase#ISocketServerAccessor#SocketServer">
+            <summary>
+            Gets the socket server.
+            </summary>
+            <value>
+            The socket server.
+            </value>
+        </member>
         <member name="E:SuperSocket.SocketBase.AppServerBase`2.SuperSocket#SocketBase#IRawDataProcessor{TAppSession}#RawDataReceived">
             <summary>
             Gets or sets the raw binary data received event handler.
@@ -4534,7 +4563,7 @@
             </summary>
             <param name="appServer">The app server.</param>
             <param name="socketSession">The socket session.</param>
-            <param name="requestFilter">The Receive filter.</param>
+            <param name="receiveFilter">The receive filter.</param>
         </member>
         <member name="M:SuperSocket.SocketBase.AppSession`2.SuperSocket#SocketBase#IAppSession#StartSession">
             <summary>
@@ -4579,15 +4608,6 @@
             <summary>
             Closes this session.
             </summary>
-        </member>
-        <member name="M:SuperSocket.SocketBase.AppSession`2.SuperSocket#SocketBase#IAppSession#TryGetSendingData(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})">
-            <summary>
-            Tries to get the data segment to be sent.
-            </summary>
-            <param name="segments">The segments.</param>
-            <returns>
-            return whether has data to send
-            </returns>
         </member>
         <member name="M:SuperSocket.SocketBase.AppSession`2.TrySend(System.String)">
             <summary>
@@ -4689,11 +4709,11 @@
             <param name="paramValues">The parameter values.</param>
             <returns>Indicate whether the message was pushed into the sending queue</returns>
         </member>
-        <member name="M:SuperSocket.SocketBase.AppSession`2.SetNextRequestFilter(SuperSocket.SocketBase.Protocol.IReceiveFilter{`1})">
+        <member name="M:SuperSocket.SocketBase.AppSession`2.SetNextReceiveFilter(SuperSocket.SocketBase.Protocol.IReceiveFilter{`1})">
             <summary>
             Sets the next Receive filter which will be used when next data block received
             </summary>
-            <param name="nextRequestFilter">The next Receive filter.</param>
+            <param name="nextReceiveFilter">The next receive filter.</param>
         </member>
         <member name="M:SuperSocket.SocketBase.AppSession`2.FilterRequest(System.Byte[],System.Int32,System.Int32,System.Boolean,System.Int32@,System.Int32@)">
             <summary>
@@ -4816,14 +4836,6 @@
             <summary>
             Gets the config of the server.
             </summary>
-        </member>
-        <member name="P:SuperSocket.SocketBase.AppSession`2.m_RequestFilter">
-            <summary>
-            Gets or sets the m_ Receive filter.
-            </summary>
-            <value>
-            The m_ Receive filter.
-            </value>
         </member>
         <member name="T:SuperSocket.SocketBase.AppSession`1">
             <summary>

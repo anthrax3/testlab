@@ -8,11 +8,11 @@ using SuperSocket.SocketBase.Command;
 
 namespace TelnetServer
 {
-    public class ECHO : StringCommandBase<TestSession>
+    public class TestSession : AppSession<TestSession>
     {
-        public override void ExecuteCommand(TestSession session, StringCommandInfo commandInfo)
+        public override void HandleUnknownCommand(StringCommandInfo cmdInfo)
         {
-            session.SendResponse(commandInfo.Data);
+            //Console.WriteLine("Unknow command: '{0}'", cmdInfo.Key);
         }
     }
 }

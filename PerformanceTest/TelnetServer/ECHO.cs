@@ -13,7 +13,7 @@ namespace TelnetServer
         public override void ExecuteCommand(AppSession session, StringRequestInfo requestInfo)
         {
             session.Send(requestInfo.Body);
-            //session.Logger.Info(requestInfo.Body);
+            //session.Logger.Error(requestInfo.Body);
         }
     }
 }

@@ -201,24 +201,24 @@
             PolicyReceiveFilter
             </summary>
         </member>
-        <member name="T:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1">
+        <member name="T:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1">
             <summary>
             FixedSizeReceiveFilter
             </summary>
             <typeparam name="TRequestInfo">The type of the request info.</typeparam>
         </member>
-        <member name="F:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1.NullRequestInfo">
+        <member name="F:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.NullRequestInfo">
             <summary>
             Null RequestInfo
             </summary>
         </member>
-        <member name="M:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1.#ctor(System.Int32)">
+        <member name="M:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.#ctor(System.Int32)">
             <summary>
-            Initializes a new instance of the <see cref="T:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1"/> class.
+            Initializes a new instance of the <see cref="T:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1"/> class.
             </summary>
             <param name="size">The size.</param>
         </member>
-        <member name="M:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1.Filter(System.Byte[],System.Int32,System.Int32,System.Boolean,System.Int32@)">
+        <member name="M:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.Filter(System.Byte[],System.Int32,System.Int32,System.Boolean,System.Int32@)">
             <summary>
             Filters the specified session.
             </summary>
@@ -229,7 +229,7 @@
             <param name="rest">The rest.</param>
             <returns></returns>
         </member>
-        <member name="M:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1.ProcessMatchedRequest(System.Byte[],System.Int32,System.Int32,System.Boolean)">
+        <member name="M:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.ProcessMatchedRequest(System.Byte[],System.Int32,System.Int32,System.Boolean)">
             <summary>
             Filters the buffer after the server receive the enough size of data.
             </summary>
@@ -239,17 +239,17 @@
             <param name="toBeCopied">if set to <c>true</c> [to be copied].</param>
             <returns></returns>
         </member>
-        <member name="M:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1.Reset">
+        <member name="M:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.Reset">
             <summary>
             Resets this instance.
             </summary>
         </member>
-        <member name="P:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1.Size">
+        <member name="P:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.Size">
             <summary>
             Gets the size of the fixed size Receive filter.
             </summary>
         </member>
-        <member name="P:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1.LeftBufferSize">
+        <member name="P:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.LeftBufferSize">
             <summary>
             Gets the size of the rest buffer.
             </summary>
@@ -257,12 +257,12 @@
             The size of the rest buffer.
             </value>
         </member>
-        <member name="P:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1.NextReceiveFilter">
+        <member name="P:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.NextReceiveFilter">
             <summary>
             Gets the next Receive filter.
             </summary>
         </member>
-        <member name="P:SuperSocket.SocketBase.Protocol.FixedSizeReceiveFilter`1.SuperSocket#SocketBase#Protocol#IOffsetAdapter#OffsetDelta">
+        <member name="P:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.SuperSocket#SocketBase#Protocol#IOffsetAdapter#OffsetDelta">
             <summary>
             Gets the offset delta.
             </summary>
