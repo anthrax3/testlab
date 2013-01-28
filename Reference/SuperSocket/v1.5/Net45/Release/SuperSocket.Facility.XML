@@ -4,137 +4,6 @@
         <name>SuperSocket.Facility</name>
     </assembly>
     <members>
-        <member name="T:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1">
-            <summary>
-            HttpReceiveFilterBase
-            </summary>
-            <typeparam name="TRequestInfo">The type of the request info.</typeparam>
-        </member>
-        <member name="F:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1.NewLine">
-            <summary>
-            Http header terminator
-            </summary>
-        </member>
-        <member name="F:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1.m_HeaderParsed">
-            <summary>
-            indicate whether the header has been parsed
-            </summary>
-        </member>
-        <member name="M:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1.#ctor(SuperSocket.SocketBase.IAppSession)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1"/> class.
-            </summary>
-        </member>
-        <member name="M:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1.Filter(System.Byte[],System.Int32,System.Int32,System.Boolean,System.Int32@)">
-            <summary>
-            Filters the specified session.
-            </summary>
-            <param name="readBuffer">The read buffer.</param>
-            <param name="offset">The offset.</param>
-            <param name="length">The length.</param>
-            <param name="toBeCopied">if set to <c>true</c> [to be copied].</param>
-            <param name="rest">The rest.</param>
-            <returns></returns>
-        </member>
-        <member name="M:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1.FilterRequestBody(System.Byte[],System.Int32,System.Int32,System.Boolean,System.Int32@)">
-            <summary>
-            Filters the request body.
-            </summary>
-            <param name="readBuffer">The read buffer.</param>
-            <param name="offset">The offset.</param>
-            <param name="length">The length.</param>
-            <param name="toBeCopied">if set to <c>true</c> [to be copied].</param>
-            <param name="rest">The rest data size.</param>
-            <returns></returns>
-        </member>
-        <member name="M:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1.ProcessMatchedRequest(System.Byte[],System.Int32,System.Int32)">
-            <summary>
-            Resolves the specified data.
-            </summary>
-            <param name="data">The data.</param>
-            <param name="offset">The offset.</param>
-            <param name="length">The length.</param>
-            <returns></returns>
-        </member>
-        <member name="M:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1.OnHeaderParsed(System.Collections.Specialized.NameValueCollection)">
-            <summary>
-            Called when [header parsed].
-            </summary>
-            <param name="header">The header.</param>
-        </member>
-        <member name="M:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1.Reset">
-            <summary>
-            Resets this instance to inital state.
-            </summary>
-        </member>
-        <member name="P:SuperSocket.Facility.HttpBase.HttpReceiveFilterBase`1.HeaderItems">
-            <summary>
-            Gets the header items.
-            </summary>
-        </member>
-        <member name="T:SuperSocket.Facility.HttpBase.IHttpRequestInfo">
-            <summary>
-            IHttpRequestInfo
-            </summary>
-        </member>
-        <member name="P:SuperSocket.Facility.HttpBase.IHttpRequestInfo.Header">
-            <summary>
-            Gets the http header.
-            </summary>
-        </member>
-        <member name="T:SuperSocket.Facility.HttpBase.HttpRequestInfoBase">
-            <summary>
-            HttpRequestInfoBase
-            </summary>
-        </member>
-        <member name="M:SuperSocket.Facility.HttpBase.HttpRequestInfoBase.#ctor(System.String,System.Collections.Specialized.NameValueCollection)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SuperSocket.Facility.HttpBase.HttpRequestInfoBase"/> class.
-            </summary>
-            <param name="key">The key.</param>
-            <param name="header">The header.</param>
-        </member>
-        <member name="P:SuperSocket.Facility.HttpBase.HttpRequestInfoBase.Key">
-            <summary>
-            Gets the key of this request.
-            </summary>
-        </member>
-        <member name="P:SuperSocket.Facility.HttpBase.HttpRequestInfoBase.Header">
-            <summary>
-            Gets the http header.
-            </summary>
-        </member>
-        <member name="T:SuperSocket.Facility.HttpBase.HttpRequestInfoBase`1">
-            <summary>
-            HttpRequestInfoBase
-            </summary>
-            <typeparam name="TRequestBody">The type of the request body.</typeparam>
-        </member>
-        <member name="M:SuperSocket.Facility.HttpBase.HttpRequestInfoBase`1.#ctor(System.String,System.Collections.Specialized.NameValueCollection,`0)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SuperSocket.Facility.HttpBase.HttpRequestInfoBase`1"/> class.
-            </summary>
-            <param name="key">The key.</param>
-            <param name="header">The header.</param>
-            <param name="body">The body.</param>
-        </member>
-        <member name="P:SuperSocket.Facility.HttpBase.HttpRequestInfoBase`1.Body">
-            <summary>
-            Gets the body.
-            </summary>
-        </member>
-        <member name="T:SuperSocket.Facility.HttpBase.MimeHeaderHelper">
-            <summary>
-            MimeHeader Helper class
-            </summary>
-        </member>
-        <member name="M:SuperSocket.Facility.HttpBase.MimeHeaderHelper.ParseHttpHeader(System.String,System.Collections.Specialized.NameValueCollection)">
-            <summary>
-            Parses the HTTP header.
-            </summary>
-            <param name="headerData">The header data.</param>
-            <param name="header">The header.</param>
-        </member>
         <member name="T:SuperSocket.Facility.PolicyServer.FlashPolicyServer">
             <summary>
             Flash policy AppServer
@@ -266,6 +135,14 @@
             <summary>
             Gets the offset delta.
             </summary>
+        </member>
+        <member name="P:SuperSocket.Facility.Protocol.FixedSizeReceiveFilter`1.State">
+            <summary>
+            Gets the filter state.
+            </summary>
+            <value>
+            The filter state.
+            </value>
         </member>
         <member name="M:SuperSocket.Facility.PolicyServer.PolicyReceiveFilter.#ctor(System.Int32)">
             <summary>
@@ -434,6 +311,14 @@
             <summary>
             Gets the offset delta relative original receiving offset which will be used for next round receiving.
             </summary>
+        </member>
+        <member name="P:SuperSocket.Facility.Protocol.CountSpliterReceiveFilter`1.State">
+            <summary>
+            Gets the filter state.
+            </summary>
+            <value>
+            The filter state.
+            </value>
         </member>
         <member name="T:SuperSocket.Facility.Protocol.CountSpliterReceiveFilter">
             <summary>
