@@ -1886,6 +1886,18 @@
             Error state
             </summary>
         </member>
+        <member name="T:SuperSocket.SocketBase.Protocol.IReceiveFilterInitializer">
+            <summary>
+            Provide the initializing interface for ReceiveFilter
+            </summary>
+        </member>
+        <member name="M:SuperSocket.SocketBase.Protocol.IReceiveFilterInitializer.Initialize(SuperSocket.SocketBase.IAppServer,SuperSocket.SocketBase.IAppSession)">
+            <summary>
+            Initializes the ReceiveFilter with the specified appServer and appSession
+            </summary>
+            <param name="appServer">The app server.</param>
+            <param name="session">The session.</param>
+        </member>
         <member name="T:SuperSocket.SocketBase.Protocol.IOffsetAdapter">
             <summary>
             The interface for a Receive filter to adapt receiving buffer offset
@@ -2660,11 +2672,10 @@
             Null RequestInfo
             </summary>
         </member>
-        <member name="M:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter`1.#ctor(SuperSocket.SocketBase.IAppSession,System.Byte[])">
+        <member name="M:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter`1.#ctor(System.Byte[])">
             <summary>
             Initializes a new instance of the <see cref="T:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter`1"/> class.
             </summary>
-            <param name="session">The session.</param>
             <param name="terminator">The terminator.</param>
         </member>
         <member name="M:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter`1.Filter(System.Byte[],System.Int32,System.Int32,System.Boolean,System.Int32@)">
@@ -2702,19 +2713,17 @@
             TerminatorRequestFilter
             </summary>
         </member>
-        <member name="M:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter.#ctor(SuperSocket.SocketBase.IAppSession,System.Byte[],System.Text.Encoding)">
+        <member name="M:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter.#ctor(System.Byte[],System.Text.Encoding)">
             <summary>
             Initializes a new instance of the <see cref="T:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter"/> class.
             </summary>
-            <param name="session">The session.</param>
             <param name="terminator">The terminator.</param>
             <param name="encoding">The encoding.</param>
         </member>
-        <member name="M:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter.#ctor(SuperSocket.SocketBase.IAppSession,System.Byte[],System.Text.Encoding,SuperSocket.SocketBase.Protocol.IRequestInfoParser{SuperSocket.SocketBase.Protocol.StringRequestInfo})">
+        <member name="M:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter.#ctor(System.Byte[],System.Text.Encoding,SuperSocket.SocketBase.Protocol.IRequestInfoParser{SuperSocket.SocketBase.Protocol.StringRequestInfo})">
             <summary>
             Initializes a new instance of the <see cref="T:SuperSocket.SocketBase.Protocol.TerminatorReceiveFilter"/> class.
             </summary>
-            <param name="session">The session.</param>
             <param name="terminator">The terminator.</param>
             <param name="encoding">The encoding.</param>
             <param name="requestParser">The request parser.</param>
@@ -3801,6 +3810,14 @@
             Gets the app session assosiated with this socket session.
             </summary>
         </member>
+        <member name="P:SuperSocket.SocketBase.ISocketSession.OrigReceiveOffset">
+            <summary>
+            Gets the original receive buffer offset.
+            </summary>
+            <value>
+            The original receive buffer offset.
+            </value>
+        </member>
         <member name="T:SuperSocket.SocketBase.LoggerExtension">
             <summary>
             Logger extension class
@@ -4005,6 +4022,22 @@
             </summary>
             <value>
             The listeners.
+            </value>
+        </member>
+        <member name="P:SuperSocket.SocketBase.ServerSummary.AvialableSendingQueueItems">
+            <summary>
+            Gets or sets the avialable sending queue items.
+            </summary>
+            <value>
+            The avialable sending queue items.
+            </value>
+        </member>
+        <member name="P:SuperSocket.SocketBase.ServerSummary.TotalSendingQueueItems">
+            <summary>
+            Gets or sets the total sending queue items.
+            </summary>
+            <value>
+            The total sending queue items.
             </value>
         </member>
         <member name="T:SuperSocket.SocketBase.SessionHandler`1">
